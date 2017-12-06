@@ -12,7 +12,7 @@ class Posts extends Component {
 
         return (
             <div className="app">
-                {posts.map(post => (
+                {posts && posts.map(post => (
                     <div className="record" key={post.id}>{post.title}</div>
                 ))}
             </div>
