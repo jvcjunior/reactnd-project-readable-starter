@@ -1,4 +1,4 @@
-import { call, put, /*takeEvery, takeLatest ,*/ fork } from 'redux-saga/effects'
+import { call, put, all , takeEvery, fork } from 'redux-saga/effects'
 import * as actions from '../actions'
 
 export function fetchPostsApi() {
@@ -7,17 +7,22 @@ export function fetchPostsApi() {
         'Authorization' : 'token',
       }
     })
-    .then(response => response.json() )
-    .then(json => json.data.children.map(child => child.data) )
+    .then(response => response.json())
 }
 
 export function* fetchPosts(reddit) {
-  yield put( actions.requestPosts(reddit) )
+  //yield put(actions.requestPosts())
   const posts = yield call(fetchPostsApi)
-  yield put( actions.receivePosts(posts) )
+  yield put(actions.receivePosts(posts))
 }
 
+// Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC
+export function* fetchPostsAsync() {
+  yield takeEvery(actions.REQUEST_POSTS, fetchPosts)
+}
 
 export default function* root() {
-  yield fork(fetchPosts)
+  yield all([
+    fetchPostsAsync(),
+  ])
 }

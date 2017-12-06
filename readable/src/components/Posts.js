@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import * as actions from '../actions'
 
 class Posts extends Component {
     componentDidMount() {
         const { dispatch } = this.props
-        dispatch({type: 'USER_FETCH_SUCCEEDED'})
+        dispatch({type: actions.REQUEST_POSTS})
     }
 
     render() {
-        // const { records } = this.props;
+        const { posts } = this.props;
+
         return (
             <div className="app">
-                {/* {records.map(record => (
-                    <div className="record" key={record.id}>{record.name}</div>
-                ))} */}
-                APP
+                {posts.map(post => (
+                    <div className="record" key={post.id}>{post.title}</div>
+                ))}
             </div>
         );
     }

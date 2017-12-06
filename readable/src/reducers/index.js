@@ -4,7 +4,7 @@ import {
   RECEIVE_POSTS
 } from '../actions'
 
-function posts(state = {
+function postsReducer(state = {
   isFetching: false,
   items: []
 }, action) {
@@ -13,9 +13,10 @@ function posts(state = {
       return { ...state, isFetching: true }
 
     case RECEIVE_POSTS:
-      return { ...state,
+      return {
+        ...state,
         isFetching: false,
-        items: action.posts,
+        items: action.items,
       }
     default:
       return state
@@ -23,7 +24,7 @@ function posts(state = {
 }
 
 const rootReducer = combineReducers({
-    posts,
+    postsReducer,
 })
 
 export default rootReducer
