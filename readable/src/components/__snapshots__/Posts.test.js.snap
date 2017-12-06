@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Component renders App components correctly 1`] = `
+exports[`Posts Component renders Posts components correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <Posts />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,10 +17,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "App",
+      "children": "APP",
+      "className": "app",
     },
     "ref": null,
-    "rendered": "App",
+    "rendered": "APP",
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -29,10 +30,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "App",
+        "children": "APP",
+        "className": "app",
       },
       "ref": null,
-      "rendered": "App",
+      "rendered": "APP",
       "type": "div",
     },
   ],

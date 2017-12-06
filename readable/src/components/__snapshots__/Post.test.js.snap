@@ -4,7 +4,7 @@ exports[`Post Component renders Post component correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <Post />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,10 +17,110 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "App",
+      "children": Array [
+        <h1>
+          Titulo
+</h1>,
+        <h2>
+          Autor
+</h2>,
+        <p>
+          Número de comentários
+</p>,
+        <p>
+          Pontuação atual
+</p>,
+        <p>
+          Mecanismo de voto
+</p>,
+        <button>
+          Editar
+</button>,
+        <button>
+          Excluir
+</button>,
+      ],
     },
     "ref": null,
-    "rendered": "App",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Titulo",
+        },
+        "ref": null,
+        "rendered": "Titulo",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Autor",
+        },
+        "ref": null,
+        "rendered": "Autor",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Número de comentários",
+        },
+        "ref": null,
+        "rendered": "Número de comentários",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Pontuação atual",
+        },
+        "ref": null,
+        "rendered": "Pontuação atual",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Mecanismo de voto",
+        },
+        "ref": null,
+        "rendered": "Mecanismo de voto",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Editar",
+        },
+        "ref": null,
+        "rendered": "Editar",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Excluir",
+        },
+        "ref": null,
+        "rendered": "Excluir",
+        "type": "button",
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -29,10 +129,110 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "App",
+        "children": Array [
+          <h1>
+            Titulo
+</h1>,
+          <h2>
+            Autor
+</h2>,
+          <p>
+            Número de comentários
+</p>,
+          <p>
+            Pontuação atual
+</p>,
+          <p>
+            Mecanismo de voto
+</p>,
+          <button>
+            Editar
+</button>,
+          <button>
+            Excluir
+</button>,
+        ],
       },
       "ref": null,
-      "rendered": "App",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Titulo",
+          },
+          "ref": null,
+          "rendered": "Titulo",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Autor",
+          },
+          "ref": null,
+          "rendered": "Autor",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Número de comentários",
+          },
+          "ref": null,
+          "rendered": "Número de comentários",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Pontuação atual",
+          },
+          "ref": null,
+          "rendered": "Pontuação atual",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Mecanismo de voto",
+          },
+          "ref": null,
+          "rendered": "Mecanismo de voto",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Editar",
+          },
+          "ref": null,
+          "rendered": "Editar",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Excluir",
+          },
+          "ref": null,
+          "rendered": "Excluir",
+          "type": "button",
+        },
+      ],
       "type": "div",
     },
   ],

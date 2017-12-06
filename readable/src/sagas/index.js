@@ -1,10 +1,14 @@
-import { call, put, takeEvery, takeLatest, fork } from 'redux-saga/effects'
+import { call, put, /*takeEvery, takeLatest ,*/ fork } from 'redux-saga/effects'
 import * as actions from '../actions'
 
 export function fetchPostsApi() {
-  return fetch(`http://localhost:3001/posts` )
-          .then(response => response.json() )
-          .then(json => json.data.children.map(child => child.data) )
+  return fetch(`http://localhost:3001/posts`, {
+      headers : {
+        'Authorization' : 'token',
+      }
+    })
+    .then(response => response.json() )
+    .then(json => json.data.children.map(child => child.data) )
 }
 
 export function* fetchPosts(reddit) {
