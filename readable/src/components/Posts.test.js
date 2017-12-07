@@ -23,13 +23,13 @@ describe('Posts Component', () => {
         expect(list.find(Card).length).toBe(0);
     });
 
-    it('calls componentDidMount() lifecycle method once', () => {
-        const postsDidMountSpy = spy(Posts.prototype, 'componentDidMount');
-        const dispatch = jest.fn();
-        const wrapper = mount(<Posts dispatch={dispatch} />);
+    // it('calls componentDidMount() lifecycle method once', () => {
+    //     const postsDidMountSpy = spy(Posts.prototype, 'componentDidMount');
+    //     const dispatch = jest.fn();
+    //     const wrapper = mount(<Posts dispatch={dispatch} />);
 
-        expect(Posts.prototype.componentDidMount.calledOnce).toBe(true);
+    //     expect(Posts.prototype.componentDidMount.calledOnce).toBe(true);
 
-        postsDidMountSpy.restore();
-    });
+    //     postsDidMountSpy.restore();
+    // });
 });

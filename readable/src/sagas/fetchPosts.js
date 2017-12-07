@@ -10,14 +10,32 @@ export function fetchPostsApi() {
     .then(response => response.json())
 }
 
-export function* fetchPosts(reddit) {
-  //yield put(actions.requestPosts())
-  //yield call(fetch, '/scores', { method: 'GET', body: { score } })
+export function fetchCategoryPostsApi(category) {
+  return fetch(`http://localhost:3001/${category}/posts`, {
+      headers : {
+        'Authorization' : 'token',
+      }
+    })
+    .then(response => response.json())
+}
+
+//without category
+export function* fetchPosts() {
   const posts = yield call(fetchPostsApi)
   yield put(actions.receivePosts(posts))
 }
 
-// Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC
-export default function* fetchPostsAsync() {
+export function* fetchPostsAsync() {
   yield takeEvery(actions.REQUEST_POSTS, fetchPosts)
+}
+
+//with category
+
+export function* fetchPostsWithCategory({category}) {
+  const posts = yield call(fetchCategoryPostsApi, category)
+  yield put(actions.receivePosts(posts))
+}
+
+export function* fetchPostsWithCategoryAsync() {
+  yield takeEvery(actions.REQUEST_POSTS_WITH_CATEGORY, fetchPostsWithCategory)
 }

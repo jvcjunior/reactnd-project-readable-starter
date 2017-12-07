@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
 import {
   REQUEST_POSTS,
-  RECEIVE_POSTS
+  RECEIVE_POSTS,
+  REQUEST_POSTS_WITH_CATEGORY,
 } from '../actions'
 
 function postsReducer(state = {
@@ -17,6 +18,12 @@ function postsReducer(state = {
         ...state,
         isFetching: false,
         items: action.items,
+      }
+    case REQUEST_POSTS_WITH_CATEGORY:
+      return {
+        ...state,
+        isFetching: false,
+        category: action.category,
       }
     default:
       return state

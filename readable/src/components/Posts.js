@@ -5,15 +5,8 @@ import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
-class Posts extends Component {
-    componentDidMount() {
-        const { dispatch } = this.props
-        dispatch({type: actions.REQUEST_POSTS})
-    }
-
-    render() {
-        const { posts } = this.props;
-
+const Posts = (props) => {
+        const { posts } = props;
         return (
             <div className="app">
                 {posts && posts.map(post => (
@@ -32,12 +25,13 @@ class Posts extends Component {
                                 icon={<FontIcon className="material-icons">mood</FontIcon>} />
                             <FlatButton
                                 icon={<FontIcon className="material-icons">mood_bad</FontIcon>} />
+                            <FlatButton label="Edit" />
+                            <FlatButton label="Delete" />
                         </CardActions>
                     </Card>
                 ))}
             </div>
         );
-    }
 }
 
 export default Posts;

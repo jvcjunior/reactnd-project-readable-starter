@@ -1,7 +1,7 @@
 import { put, call } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 import * as actions from '../actions'
-import fetchPostsAsync, {fetchPosts , fetchPostsApi } from './fetchPosts'
+import { fetchPostsAsync, fetchPosts , fetchPostsApi } from './fetchPosts'
 
 it('fetchPostsAsync Saga test', () => {
   const gen = fetchPosts()
