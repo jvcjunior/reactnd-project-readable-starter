@@ -12,6 +12,7 @@ export function fetchPostsApi() {
 
 export function* fetchPosts(reddit) {
   //yield put(actions.requestPosts())
+  //yield call(fetch, '/scores', { method: 'GET', body: { score } })
   const posts = yield call(fetchPostsApi)
   yield put(actions.receivePosts(posts))
 }
