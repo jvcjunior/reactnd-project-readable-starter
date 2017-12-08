@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import PostReducer from './post'
 import {
   REQUEST_POSTS,
   RECEIVE_POSTS,
@@ -32,6 +33,7 @@ function postsReducer(state = {
 
 const rootReducer = combineReducers({
     postsReducer,
+    PostReducer
 })
 
 export default rootReducer

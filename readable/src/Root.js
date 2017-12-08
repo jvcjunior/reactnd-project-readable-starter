@@ -7,6 +7,7 @@ import DefaultLayout from './layouts/Default';
 
 import Home from './pages/Home.container';
 import CategoryPosts from './pages/CategoryPosts.container';
+import PostDetail from './pages/PostDetail.container';
 
 
 const Root = ({ store }) => (
@@ -15,7 +16,8 @@ const Root = ({ store }) => (
         <Router>
           <div>
             <DefaultLayout exact path="/" component={Home} />
-            <DefaultLayout path="/:category" component={CategoryPosts} />
+            <DefaultLayout exact path="/:category" component={CategoryPosts} />
+            <DefaultLayout exact path="/:category/:post_id" component={PostDetail} />
           </div>
         </Router>
       </MuiThemeProvider>

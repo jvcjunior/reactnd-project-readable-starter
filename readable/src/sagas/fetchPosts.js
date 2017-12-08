@@ -19,6 +19,15 @@ export function fetchCategoryPostsApi(category) {
     .then(response => response.json())
 }
 
+export function fetchPostDetailApi(postId) {
+  return fetch(`http://localhost:3001/posts/${postId}`, {
+      headers : {
+        'Authorization' : 'token',
+      }
+    })
+    .then(response => response.json())
+}
+
 //without category
 export function* fetchPosts() {
   const posts = yield call(fetchPostsApi)
@@ -30,7 +39,6 @@ export function* fetchPostsAsync() {
 }
 
 //with category
-
 export function* fetchPostsWithCategory({category}) {
   const posts = yield call(fetchCategoryPostsApi, category)
   yield put(actions.receivePosts(posts))
@@ -38,4 +46,15 @@ export function* fetchPostsWithCategory({category}) {
 
 export function* fetchPostsWithCategoryAsync() {
   yield takeEvery(actions.REQUEST_POSTS_WITH_CATEGORY, fetchPostsWithCategory)
+}
+
+
+//post details
+export function* fetchPostDetail({postId}) {
+  const post = yield call(fetchPostDetailApi, postId)
+  yield put(actions.receivePostDetails(post))
+}
+
+export function* fetchPostDetailAsync() {
+  yield takeEvery(actions.REQUEST_POST_DETAIL, fetchPostDetail)
 }
