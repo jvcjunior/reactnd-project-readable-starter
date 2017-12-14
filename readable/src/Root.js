@@ -15,9 +15,9 @@ const Root = ({ store }) => (
       <MuiThemeProvider>
         <Router>
           <div>
-            <DefaultLayout exact path="/" component={Home} />
-            <DefaultLayout exact path="/:category" component={CategoryPosts} />
-            <DefaultLayout exact path="/:category/:post_id" component={PostDetail} />
+            <DefaultLayout exact path="/" component={Home} title="Posts"/>
+            <DefaultLayout exact path="/:category" component={CategoryPosts} title="Posts"/>
+            <DefaultLayout exact path="/:category/:post_id" component={PostDetail} title="Details"/>
           </div>
         </Router>
       </MuiThemeProvider>

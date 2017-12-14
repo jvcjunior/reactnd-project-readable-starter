@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import * as actions from '../actions'
+import * as actions from '../actions';
+import Post from '../components/Post';
+import Comments from '../components/Comments.container';
 
 class PostDetail extends Component {
     constructor(props) {
@@ -14,7 +16,10 @@ class PostDetail extends Component {
     render() {
         const { post } = this.props;
         return (
-            <div> DETAILS </div>
+            <div className="app">
+                <Post post={post} />
+                <Comments {...this.props} />
+            </div>
         );
     }
 }
