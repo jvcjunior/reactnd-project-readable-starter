@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import * as actions from '../actions'
 import Posts from '../components/Posts.container';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         const { dispatch } = this.props
         dispatch({ type: actions.REQUEST_POSTS })
@@ -14,8 +12,25 @@ class Home extends Component {
 
     render() {
         const { posts } = this.props;
+        const style = {
+            buttonContainer: {
+                position: 'absolute',
+                bottom: '20px',
+                right: '20px',
+            },
+            button: {
+                marginRight: 20,
+            }
+        };
         return (
-            <Posts posts={posts}/>
+            <div>
+                <Posts posts={posts} />
+                <div style={style.buttonContainer}>
+                    <FloatingActionButton style={style.button}>
+                        <ContentAdd />
+                    </FloatingActionButton>
+                </div>
+            </div>
         );
     }
 }

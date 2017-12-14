@@ -1,10 +1,10 @@
 import React from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
+import { withRouter } from 'react-router'
 
-const Post = ({post}) => {
+const Post = ({ post, match, history }) => {
     return (
         <Card key={post.id}>
             <CardHeader
@@ -21,6 +21,7 @@ const Post = ({post}) => {
                     icon={<FontIcon className="material-icons">mood</FontIcon>} />
                 <FlatButton
                     icon={<FontIcon className="material-icons">mood_bad</FontIcon>} />
+                <FlatButton label="Details" onClick={() => history.push(`/${post.category}/${post.id}`)}/>
                 <FlatButton label="Edit" />
                 <FlatButton label="Delete" />
             </CardActions>
@@ -28,4 +29,4 @@ const Post = ({post}) => {
     );
 }
 
-export default Post;
+export default withRouter(Post);

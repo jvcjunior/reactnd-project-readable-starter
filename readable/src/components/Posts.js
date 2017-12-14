@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import * as actions from '../actions'
+import React from 'react';
 import Post from './Post';
+import { withRouter } from 'react-router'
 
 const Posts = (props) => {
-        const { posts } = props;
-        return (
-            <div>
-                {posts && posts.map(post => {
-                    <Post post={post} />
-                })}
-            </div>
-        );
+    const { posts } = props;
+    return (
+        <div>
+            {posts && posts.map(post => {
+                return <Post key={post.id} post={post} />
+            })}
+        </div>
+    );
 }
 
-export default Posts;
+export default withRouter(Posts);

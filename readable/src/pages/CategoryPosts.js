@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as actions from '../actions'
 import Posts from '../components/Posts.container';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class CategoryPosts extends Component{
 
@@ -10,9 +11,17 @@ class CategoryPosts extends Component{
     }
 
     render() {
-        const { posts } = this.props;
+        const { posts, history } = this.props;
+
+        const style = {
+            margin: 12,
+        };
+
         return (
-            <Posts posts={posts}/>
+            <div>
+                <Posts posts={posts}/>
+                <RaisedButton label="Back" onClick={() => history.push('/')} primary={true} style={style} />
+            </div>
         );
     }
 }
