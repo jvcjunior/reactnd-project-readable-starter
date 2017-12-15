@@ -11,7 +11,7 @@ class Home extends Component {
     }
 
     render() {
-        const { posts } = this.props;
+        const { posts, history } = this.props;
         const style = {
             buttonContainer: {
                 position: 'absolute',
@@ -26,7 +26,7 @@ class Home extends Component {
             <div>
                 <Posts posts={posts} />
                 <div style={style.buttonContainer}>
-                    <FloatingActionButton style={style.button}>
+                    <FloatingActionButton style={style.button} onClick={() => history.push('/add')}>
                         <ContentAdd />
                     </FloatingActionButton>
                 </div>
