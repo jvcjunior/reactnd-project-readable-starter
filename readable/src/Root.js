@@ -7,6 +7,7 @@ import DefaultLayout from './layouts/Default';
 
 import Home from './pages/Home.container';
 import NewPost from './pages/NewPost';
+import EditPost from './pages/EditPost';
 import CategoryPosts from './pages/CategoryPosts.container';
 import PostDetail from './pages/PostDetail.container';
 
@@ -19,6 +20,7 @@ const Root = ({ store }) => (
             <DefaultLayout exact path="/" component={Home} title="Posts"/>
             <Switch>
               <DefaultLayout exact path="/add" component={NewPost} title="New Post"/>
+              <DefaultLayout exact path="/edit" component={EditPost} title="Edit Post"/>
               <DefaultLayout exact path="/:category" component={CategoryPosts} title="Posts"/>
             </Switch>
             <DefaultLayout exact path="/:category/:post_id" component={PostDetail} title="Post Details"/>

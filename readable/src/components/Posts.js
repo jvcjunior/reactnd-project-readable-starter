@@ -3,7 +3,7 @@ import Post from './Post';
 import { withRouter } from 'react-router'
 
 const Posts = (props) => {
-    const { posts } = props;
+    const { posts, history } = props;
     return (
         <div>
             {posts && posts.map(post => {

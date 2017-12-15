@@ -22,7 +22,7 @@ const Post = ({ post, match, history }) => {
                 <FlatButton
                     icon={<FontIcon className="material-icons">mood_bad</FontIcon>} />
                 <FlatButton label="Details" onClick={() => history.push(`/${post.category}/${post.id}`)}/>
-                <FlatButton label="Edit" />
+                <FlatButton label="Edit" onClick={() => history.push({ pathname: '/edit', state: { post: post } })} />
                 <FlatButton label="Delete" />
             </CardActions>
         </Card>
